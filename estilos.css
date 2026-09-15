@@ -1,0 +1,779 @@
+**{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:#fff;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+/* ENCABEZADO */
+
+header{
+    background:#b92525;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 10px #111;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px;
+}
+
+nav a:hover{
+    color:#ffd83d;
+}
+
+/* BOTONES */
+
+.boton{
+    display:inline-block;
+    background:#b92525;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:6px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.boton:hover{
+    background:#d6a928;
+    color:#000;
+}
+
+/* INICIO */
+
+.inicio{
+    min-height:520px;
+    padding:60px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.texto{
+    width:50%;
+}
+
+.texto h1{
+    color:#b92525;
+    font-size:43px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.texto p{
+    color:#ddd;
+    font-size:19px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.foto-principal{
+    width:43%;
+}
+
+.foto-principal img{
+    height:360px;
+    object-fit:cover;
+    border-radius:15px;
+    border:3px solid #d6a928;
+    box-shadow:0 5px 15px #222;
+}
+
+/* BIENVENIDA */
+
+.bienvenida{
+    background:#111;
+    text-align:center;
+    padding:60px 8%;
+}
+
+.bienvenida h2{
+    color:#d6a928;
+    margin-bottom:12px;
+}
+
+.bienvenida > p{
+    color:#ccc;
+    margin-bottom:30px;
+}
+
+.opciones{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.opciones div{
+    width:280px;
+    background:#1b1b1b;
+    padding:25px;
+    border:1px solid #b92525;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.opciones div:hover{
+    transform:translateY(-5px);
+    border-color:#d6a928;
+}
+
+.opciones span{
+    font-size:38px;
+}
+
+.opciones h3{
+    color:#b92525;
+    margin:10px 0;
+}
+
+.opciones p{
+    color:#ccc;
+    margin-bottom:15px;
+}
+
+.opciones a{
+    color:#d6a928;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* FRASE */
+
+.frase{
+    background:#b92525;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.frase h2{
+    margin-bottom:10px;
+}
+
+.frase p{
+    margin-bottom:20px;
+}
+
+.frase .boton{
+    background:#d6a928;
+    color:#000;
+}
+
+/* TITULOS */
+
+.titulo-nosotros,
+.titulo-promociones,
+.titulo-precios,
+.titulo-reserva{
+    background:#111;
+    text-align:center;
+    padding:55px 20px;
+    border-bottom:2px solid #b92525;
+}
+
+.titulo-nosotros h1,
+.titulo-promociones h1,
+.titulo-precios h1,
+.titulo-reserva h1{
+    color:#d6a928;
+    margin-bottom:10px;
+    font-size:34px;
+}
+
+.titulo-nosotros p,
+.titulo-promociones p,
+.titulo-precios p,
+.titulo-reserva p{
+    color:#ccc;
+}
+
+/* NOSOTROS */
+
+.historia{
+    padding:60px 8%;
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+.foto-historia{
+    width:45%;
+}
+
+.foto-historia img{
+    height:350px;
+    object-fit:cover;
+    border-radius:12px;
+    border:3px solid #b92525;
+    box-shadow:0 5px 15px #222;
+}
+
+.texto-historia{
+    width:50%;
+}
+
+.texto-historia h2{
+    color:#b92525;
+    margin-bottom:18px;
+}
+
+.texto-historia p{
+    color:#ddd;
+    line-height:1.7;
+    margin-bottom:13px;
+    text-align:justify;
+}
+
+.texto-historia strong{
+    color:#d6a928;
+}
+
+/* MISION Y VISION */
+
+.mision-vision{
+    background:#111;
+    padding:60px 8%;
+    text-align:center;
+}
+
+.mision-vision > h2{
+    color:#d6a928;
+    margin-bottom:35px;
+}
+
+.contenedor-mv{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.tarjeta-mv{
+    width:400px;
+    background:#1b1b1b;
+    border:1px solid #b92525;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 12px #000;
+}
+
+.icono{
+    font-size:40px;
+}
+
+.tarjeta-mv h3{
+    color:#b92525;
+    margin:10px;
+}
+
+.tarjeta-mv p{
+    color:#ddd;
+    line-height:1.7;
+    text-align:justify;
+}
+
+/* UBICACION */
+
+.ubicacion{
+    padding:60px 8%;
+    text-align:center;
+}
+
+.ubicacion h2{
+    color:#d6a928;
+    margin-bottom:10px;
+}
+
+.ubicacion p{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+.mapa{
+    max-width:900px;
+    margin:auto;
+    border:3px solid #b92525;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px #111;
+}
+
+.mapa iframe{
+    width:100%;
+    height:400px;
+    border:0;
+}
+
+/* CONTACTO */
+
+.contacto-nosotros{
+    background:#111;
+    padding:50px 8%;
+    text-align:center;
+}
+
+.contacto-nosotros h2{
+    color:#d6a928;
+    margin-bottom:30px;
+}
+
+.datos-contacto{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.datos-contacto div{
+    width:250px;
+    background:#1b1b1b;
+    border:1px solid #b92525;
+    padding:22px;
+    border-radius:10px;
+}
+
+.datos-contacto span{
+    font-size:30px;
+}
+
+.datos-contacto h3{
+    color:#b92525;
+    margin:8px;
+}
+
+.datos-contacto p{
+    color:#ccc;
+}
+
+/* PROMOCIONES */
+
+.promociones{
+    background:#000;
+    padding:60px 8%;
+    text-align:center;
+}
+
+.promociones h2{
+    color:#d6a928;
+    margin-bottom:35px;
+}
+
+.contenedor-promociones{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.tarjeta-promocion{
+    width:300px;
+    background:#111;
+    border:2px solid #b92525;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px #111;
+    transition:0.3s;
+}
+
+.tarjeta-promocion:hover{
+    transform:translateY(-6px);
+    border-color:#d6a928;
+}
+
+.tarjeta-promocion img{
+    height:240px;
+    object-fit:contain;
+    background:#111;
+}
+
+.contenido-promocion{
+    padding:22px;
+}
+
+.contenido-promocion h3{
+    color:#d6a928;
+    margin-bottom:10px;
+}
+
+.contenido-promocion h4{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.contenido-promocion p{
+    color:#ccc;
+    line-height:1.5;
+}
+
+.precio{
+    color:#b92525;
+    font-size:27px;
+    font-weight:bold;
+    margin:15px;
+}
+
+.mensaje-promociones{
+    background:#d6a928;
+    color:#000;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.mensaje-promociones h2{
+    margin-bottom:12px;
+}
+
+.mensaje-promociones p{
+    margin-bottom:20px;
+}
+
+/* PRECIOS */
+
+.seccion-precios{
+    background:#000;
+    padding:60px 8%;
+    text-align:center;
+}
+
+.seccion-precios h2{
+    color:#d6a928;
+    margin-bottom:35px;
+}
+
+.contenedor-precios{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.tarjeta-precio{
+    width:300px;
+    background:#111;
+    border:2px solid #b92525;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px #111;
+}
+
+.foto-precio{
+    position:relative;
+    height:230px;
+    background:#111;
+}
+
+.foto-precio img{
+    height:100%;
+    object-fit:contain;
+}
+
+.precio-revelado{
+    position:absolute;
+    inset:0;
+    background:rgba(185,37,37,.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:0.3s;
+}
+
+.foto-precio:hover .precio-revelado{
+    opacity:1;
+}
+
+.precio-revelado span{
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.contenido-precio{
+    padding:22px;
+}
+
+.contenido-precio h3{
+    color:#d6a928;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.contenido-precio p{
+    color:#ccc;
+    margin-bottom:15px;
+    line-height:1.5;
+}
+
+.precio-normal{
+    color:#b92525;
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.informacion-precios{
+    background:#111;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.informacion-precios h2{
+    color:#d6a928;
+    margin-bottom:10px;
+}
+
+.informacion-precios p{
+    color:#ccc;
+}
+
+.llamada-precios{
+    background:#d6a928;
+    color:#000;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.llamada-precios h2{
+    margin-bottom:12px;
+}
+
+.llamada-precios p{
+    margin-bottom:20px;
+}
+
+/* RESERVA */
+
+.reserva{
+    background:#000;
+    padding:60px 20px;
+}
+
+.formulario{
+    max-width:600px;
+    margin:auto;
+    background:#111;
+    border:1px solid #b92525;
+    padding:30px;
+    border-radius:10px;
+}
+
+.formulario h2{
+    text-align:center;
+    color:#d6a928;
+    margin-bottom:20px;
+}
+
+.formulario label{
+    display:block;
+    color:#fff;
+    font-weight:bold;
+    margin:12px 0 6px;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+    width:100%;
+    padding:11px;
+    background:#222;
+    color:#fff;
+    border:1px solid #555;
+    border-radius:5px;
+}
+
+.boton-pedido{
+    width:100%;
+    padding:13px;
+    margin-top:20px;
+    background:#25d366;
+    color:#fff;
+    border:0;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.informacion-reserva{
+    text-align:center;
+    background:#111;
+    padding:50px 20px;
+}
+
+.informacion-reserva h2{
+    color:#d6a928;
+    margin-bottom:30px;
+}
+
+.pasos-reserva{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.pasos-reserva div{
+    width:230px;
+    padding:20px;
+    background:#1b1b1b;
+    border:1px solid #b92525;
+    border-radius:10px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    background:#25d366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 3px 10px #000;
+}
+
+/* FOOTER */
+
+footer{
+    background:#090909;
+    text-align:center;
+    padding:30px;
+    border-top:2px solid #b92525;
+}
+
+footer h3{
+    color:#d6a928;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#ccc;
+    margin:5px;
+}
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:18px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .inicio,
+    .historia{
+        flex-direction:column;
+        text-align:center;
+        padding:45px 6%;
+    }
+
+    .texto,
+    .foto-principal,
+    .foto-historia,
+    .texto-historia{
+        width:100%;
+    }
+
+    .texto h1{
+        font-size:32px;
+    }
+
+    .texto p{
+        font-size:17px;
+    }
+
+    .foto-principal img,
+    .foto-historia img{
+        height:280px;
+    }
+
+    .texto-historia p{
+        text-align:left;
+    }
+
+    .tarjeta-precio,
+    .tarjeta-promocion,
+    .tarjeta-mv{
+        width:100%;
+        max-width:340px;
+    }
+
+    .tarjeta-promocion img{
+        height:260px;
+    }
+
+    .foto-precio{
+        height:250px;
+    }
+
+    .mapa iframe{
+        height:300px;
+    }
+
+    .titulo-nosotros h1,
+    .titulo-promociones h1,
+    .titulo-precios h1,
+    .titulo-reserva h1{
+        font-size:28px;
+    }
+
+    .boton{
+        padding:11px 18px;
+    }
+
+    .whatsapp{
+        right:15px;
+        bottom:15px;
+        width:52px;
+        height:52px;
+        font-size:24px;
+    }
+}
