@@ -1,0 +1,30 @@
+POLLOS CHICKEN - ARCHIVOS PARA SUBIR A GITHUB
+
+Esta carpeta contiene las cinco páginas del sitio, los estilos CSS y las imágenes.
+
+Archivos:
+- index.html: página de inicio
+- nosotros.html: información y ubicación del negocio
+- promociones.html: ofertas
+- precios.html: menú
+- reserva.html: formulario de pedido por WhatsApp
+- estilos.css: colores, tamaños y diseño
+- imagenes/: fotografías usadas en la página
+
+IMÁGENES DEL MENÚ
+- menu1.jpg: fotografía real del plato de pollo broaster enviada por el usuario
+- menu2.jpg: fotografía real del plato de salchipapa/salchipollo enviada por el usuario
+- menu3.jpg: fotografía real de pollo entero de Pollos Chicken, recortada para quitar el texto impreso en la parte inferior
+
+PARA ACTUALIZAR GITHUB
+1. Descarga una copia del repositorio actual antes de reemplazar archivos.
+2. Entra a https://github.com/ruddyfranzua/pollos-chicken
+3. Pulsa Add file > Upload files.
+4. Abre esta carpeta y sube los cinco HTML, estilos.css y la carpeta imagenes. Deben quedar en la raíz del repositorio, con las fotos dentro de imagenes.
+5. Pulsa Commit changes.
+6. Comprueba https://ruddyfranzua.github.io/pollos-chicken/
+
+DATOS A COMPROBAR
+- El teléfono +591 68322655 es temporal/de prueba; reemplazar cuando el negocio confirme el número definitivo.
+- Se mantuvo Bs. 35 para Menú 2 porque era el importe que figuraba previamente. Confirma que ese sea el precio verdadero de la salchipapa antes de la defensa.
+- El formulario calcula un total estimado y abre WhatsApp con el mensaje preparado. No guarda pedidos en una base de datos ni procesa pagos.

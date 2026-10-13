@@ -383,7 +383,8 @@ nav a:hover {
 }
 
 .foto-precio img {
-    height: 100%; object-fit: contain;
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center;
 }
 
 .precio-revelado {
