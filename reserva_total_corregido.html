@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - Pollos Chicken</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🍗 POLLOS CHICKEN</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="precios.html">Menú</a>
+            <a href="reserva.html">Reserva</a>
+        </nav>
+    </header>
+
+    <section class="titulo-reserva">
+        <h1>REALIZA TU PEDIDO</h1>
+        <p>Completa el formulario y envía tu pedido por WhatsApp.</p>
+    </section>
+
+    <section class="reserva">
+        <div class="formulario">
+            <h2>Solicitar pedido</h2>
+            <form id="formularioPedido">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+
+                <label for="correo">Correo electrónico (opcional)</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese su correo">
+
+                <label for="pedido">Producto o promoción</label>
+                <select id="pedido" name="pedido" required>
+                    <option value="Pollo Broaster - Bs. 20" data-precio="20" selected>Pollo Broaster - Bs. 20</option>
+                    <option value="Salchipapa - Bs. 35" data-precio="35">Salchipapa - Bs. 35</option>
+                    <option value="Pollo Entero - Bs. 45" data-precio="45">Pollo Entero - Bs. 45</option>
+                    <option value="Promo Estudiante - Bs. 17" data-precio="17">Promo Estudiante - Bs. 17</option>
+                    <option value="Familia Chicken - Bs. 30" data-precio="30">Familia Chicken - Bs. 30</option>
+                    <option value="Promo Chicken - Bs. 45" data-precio="45">Promo Chicken - Bs. 45</option>
+                </select>
+
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="50" step="1" value="1" inputmode="numeric" required>
+
+                <div class="total-pedido" aria-live="polite">
+                    <span>Monto total estimado:</span>
+                    <strong id="totalEstimado" role="status">Bs. 20</strong>
+                    <small id="ayudaTotal">El monto cambia al elegir otro producto o modificar la cantidad.</small>
+                </div>
+
+                <label for="observaciones">Observaciones (opcional)</label>
+                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escriba alguna observación..."></textarea>
+
+                <label for="telefono">Teléfono de contacto</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej. 68322655" required>
+
+                <button type="submit" class="boton-pedido">📱 ENVIAR PEDIDO POR WHATSAPP</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="informacion-reserva">
+        <h2>¿CÓMO REALIZAR TU PEDIDO?</h2>
+        <div class="pasos-reserva">
+            <div><span>1</span><p>Selecciona tu producto.</p></div>
+            <div><span>2</span><p>Completa tus datos.</p></div>
+            <div><span>3</span><p>Envía tu pedido por WhatsApp.</p></div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/59168322655" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">💬</a>
+
+    <footer>
+        <h3>🍗 POLLOS CHICKEN</h3>
+        <p>El sabor que te hace volver.</p>
+        <p>📍 Parada Mini 2</p>
+        <p>📱 +591 68322655</p>
+        <p>© 2026 Pollos Chicken</p>
+    </footer>
+
+    <script>
+        // Numero de prueba; se cambiara cuando el negocio tenga el numero definitivo.
+        const numeroWhatsApp = "59168322655";
+        const formulario = document.getElementById("formularioPedido");
+        const selectorPedido = document.getElementById("pedido");
+        const cantidadPedido = document.getElementById("cantidad");
+        const totalEstimado = document.getElementById("totalEstimado");
+        const ayudaTotal = document.getElementById("ayudaTotal");
+
+        function actualizarTotal() {
+            const opcion = selectorPedido.options[selectorPedido.selectedIndex];
+            const precio = Number(opcion.getAttribute("data-precio")) || 0;
+            const cantidad = Number(cantidadPedido.value);
+
+            if (!precio) {
+                totalEstimado.textContent = "Elige un producto";
+                return;
+            }
+
+            if (!Number.isInteger(cantidad) || cantidad < 1) {
+                totalEstimado.textContent = "Ingresa la cantidad";
+                return;
+            }
+
+            if (cantidad > 50) {
+                totalEstimado.textContent = "Máximo 50 unidades";
+                return;
+            }
+
+            totalEstimado.textContent = "Bs. " + (precio * cantidad);
+            ayudaTotal.textContent = "Precio por unidad: Bs. " + precio + ". El total se actualiza automáticamente.";
+        }
+
+        // Si se llega desde el menú o las promociones, selecciona ese producto.
+        const parametros = new URLSearchParams(window.location.search);
+        const productoElegido = parametros.get("pedido") || parametros.get("promo");
+
+        if (productoElegido) {
+            for (const opcion of selectorPedido.options) {
+                if (opcion.value === productoElegido) {
+                    selectorPedido.value = productoElegido;
+                    break;
+                }
+            }
+        }
+
+        // Estos eventos funcionan al escribir en computadora o celular.
+        selectorPedido.addEventListener("input", actualizarTotal);
+        selectorPedido.addEventListener("change", actualizarTotal);
+        cantidadPedido.addEventListener("input", actualizarTotal);
+        cantidadPedido.addEventListener("change", actualizarTotal);
+        cantidadPedido.addEventListener("keyup", actualizarTotal);
+        actualizarTotal();
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+            actualizarTotal();
+
+            if (!formulario.reportValidity()) return;
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const observaciones = document.getElementById("observaciones").value.trim();
+            const opcion = selectorPedido.options[selectorPedido.selectedIndex];
+            const precio = Number(opcion.getAttribute("data-precio")) || 0;
+            const cantidad = Number(cantidadPedido.value);
+            const importe = precio * cantidad;
+
+            const mensaje = [
+                "Hola Pollos Chicken, quisiera realizar un pedido.",
+                "",
+                "Nombre: " + nombre,
+                "Teléfono: " + telefono,
+                correo ? "Correo: " + correo : "",
+                "Producto: " + selectorPedido.value,
+                "Cantidad: " + cantidad,
+                "Total estimado: Bs. " + importe,
+                observaciones ? "Observaciones: " + observaciones : ""
+            ].filter(Boolean).join("\n");
+
+            const enlace = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensaje);
+            window.open(enlace, "_blank", "noopener,noreferrer");
+        });
+    </script>
+</body>
+</html>
