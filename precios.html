@@ -3,89 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta el menú de Pollos Chicken en Vinto y realiza tu pedido.">
     <title>Menú - Pollos Chicken</title>
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
-        <div class="logo">🍗 POLLOS CHICKEN</div>
+        <div class="logo"><span class="logo-icon">🍗</span><span class="logo-pollos">POLLOS</span><span class="logo-chicken">CHICKEN</span></div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="promociones.html">Promociones</a>
-            <a href="precios.html">Menú</a>
+            <a href="precios.html" aria-current="page">Menú</a>
+            <a href="galeria.html">Galería de fotos</a>
+            <a href="opiniones.html">Opiniones</a>
             <a href="reserva.html">Reserva</a>
         </nav>
     </header>
 
     <section class="titulo-precios">
         <h1>NUESTRO MENÚ</h1>
-        <p>Elige tu producto favorito.</p>
+        <p>Elige tu favorito y haz tu pedido.</p>
     </section>
 
-    <section class="seccion-precios">
-        <h2>MENÚ</h2>
-        <div class="contenedor-precios">
-            <div class="tarjeta-precio">
-                <div class="foto-precio">
-                    <img src="./imagenes/menu1.jpg" alt="Pollo broaster con papas y ensalada">
-                    <div class="precio-revelado"><span>Bs. 20</span></div>
-                </div>
-                <div class="contenido-precio">
-                    <h3>Pollo Broaster</h3>
-                    <p>1/4 de pollo con papas y ensalada.</p>
-                    <div class="precio-normal">Bs. 20</div>
-                    <a href="reserva.html?pedido=Pollo%20Broaster%20-%20Bs.%2020" class="boton">RESERVAR</a>
-                </div>
-            </div>
+    <main>
+        <section class="seccion-precios">
+            <h2>PLATOS Y MENÚ DEL DÍA</h2>
+            <div class="contenedor-precios">
+                <article class="tarjeta-precio">
+                    <div class="foto-precio">
+                        <img src="imagenes/menu2.jpg" alt="Pollo broaster acompañado de papas fritas y arroz" loading="lazy">
+                        <div class="precio-revelado"><span>Bs. 15</span></div>
+                    </div>
+                    <div class="contenido-precio">
+                        <h3>Pollo Broaster</h3>
+                        <p>Pollo crocante acompañado de papas fritas, ideal para disfrutar recién preparado.</p>
+                        <div class="precio-normal">Bs. 15</div>
+                        <a href="reserva.html?pedido=Pollo%20Broaster%20-%20Bs.%2015" class="boton">RESERVAR</a>
+                    </div>
+                </article>
 
-            <div class="tarjeta-precio">
-                <div class="foto-precio">
-                    <img src="./imagenes/menu2.jpg" alt="Salchipapa con papas fritas y salchicha">
-                    <div class="precio-revelado"><span>Bs. 35</span></div>
-                </div>
-                <div class="contenido-precio">
-                    <h3>Salchipapa</h3>
-                    <p>Papas fritas acompañadas de salchicha.</p>
-                    <div class="precio-normal">Bs. 35</div>
-                    <a href="reserva.html?pedido=Salchipapa%20-%20Bs.%2035" class="boton">RESERVAR</a>
-                </div>
-            </div>
+                <article class="tarjeta-precio">
+                    <div class="foto-precio">
+                        <img src="imagenes/menu1.jpg" alt="Salchipollo con papas fritas y salchichas" loading="lazy">
+                        <div class="precio-revelado"><span>Bs. 18</span></div>
+                    </div>
+                    <div class="contenido-precio">
+                        <h3>Salchipollo</h3>
+                        <p>Papas fritas y salchichas doradas con salsas al gusto, una opción para quitar el antojo.</p>
+                        <div class="precio-normal">Bs. 18</div>
+                        <a href="reserva.html?pedido=Salchipollo%20-%20Bs.%2018" class="boton">RESERVAR</a>
+                    </div>
+                </article>
 
-            <div class="tarjeta-precio">
-                <div class="foto-precio">
-                    <img src="./imagenes/menu3.jpg" alt="Pollo entero con papas y ensalada">
-                    <div class="precio-revelado"><span>Bs. 45</span></div>
-                </div>
-                <div class="contenido-precio">
-                    <h3>Pollo Entero</h3>
-                    <p>Pollo entero con papas, ensalada y bebida.</p>
-                    <div class="precio-normal">Bs. 45</div>
-                    <a href="reserva.html?pedido=Pollo%20Entero%20-%20Bs.%2045" class="boton">RESERVAR</a>
-                </div>
+                <article class="tarjeta-precio">
+                    <div class="foto-precio">
+                        <img src="imagenes/menu_dia_medio_pollo.jpg" alt="Menú casero de medio pollo con arroz, papas fritas y ensalada" loading="lazy">
+                        <div class="precio-revelado"><span>Bs. 35</span></div>
+                    </div>
+                    <div class="contenido-precio">
+                        <h3>Menú del Día · Medio Pollo</h3>
+                        <p>Medio pollo servido con arroz, papas fritas y ensalada. Una comida completa al estilo casero.</p>
+                        <div class="precio-normal">Bs. 35</div>
+                        <a href="reserva.html?pedido=Men%C3%BA%20del%20D%C3%ADa%20-%20Medio%20Pollo%20-%20Bs.%2035" class="boton">RESERVAR</a>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <section class="informacion-precios">
-        <h2>ELIGE TU FAVORITO</h2>
-        <p>Pasa el cursor sobre la fotografía para consultar el precio.</p>
+        <h2>¿QUÉ SE TE ANTOJA HOY?</h2>
+        <p>Las fotografías muestran opciones referenciales. Consulta disponibilidad al realizar tu pedido.</p>
     </section>
 
     <section class="llamada-precios">
         <h2>¿YA SABES QUÉ QUIERES?</h2>
-        <p>Haz tu pedido de forma rápida.</p>
+        <p>Selecciona tu producto y coordina tu pedido directamente con Pollos Chicken.</p>
         <a href="reserva.html" class="boton">HACER PEDIDO</a>
     </section>
-
-    <a href="https://wa.me/59168322655?text=Hola%20Pollos%20Chicken%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20precios."
-       class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">💬</a>
 
     <footer>
         <h3>🍗 POLLOS CHICKEN</h3>
         <p>El sabor que te hace volver.</p>
         <p>📍 Parada Mini 2</p>
-        <p>📱 +591 68322655</p>
+        <p>📱 +591 68900443</p>
         <p>© 2026 Pollos Chicken</p>
     </footer>
 </body>

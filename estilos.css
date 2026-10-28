@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif; background: #000;
+    font-family: Arial, sans-serif; background: #0b0b0b;
     color: #fff;
 }
 
@@ -23,11 +23,24 @@ header {
 }
 
 .logo {
-    font-size: 23px; font-weight: bold;
+    display: flex; align-items: center; gap: 7px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 36px; font-weight: 900; line-height: 1;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    white-space: nowrap;
+    text-shadow: 2px 2px 0 #650d0d, 4px 4px 0 rgba(0, 0, 0, .28);
 }
 
+.logo-icon {
+    display: inline-block; font-size: 32px;
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, .25));
+}
+
+.logo-pollos { color: #fff; }
+.logo-chicken { color: #ffe27a; }
+
 nav {
-    display: flex; gap: 18px;
+    display: flex; gap: 13px;
 }
 
 nav a {
@@ -38,6 +51,22 @@ nav a {
 
 nav a:hover {
     color: #000; background: #d6a928;
+}
+
+/* Franja panorámica de papas fritas en la portada */
+.franja-papas {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    background: #151515;
+    border-bottom: 3px solid #d6a928;
+}
+
+.franja-papas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 48%;
 }
 
 /* Botones */
@@ -66,8 +95,15 @@ nav a:hover {
 }
 
 .texto h1 {
-    color: #b92525; font-size: 43px;
-    line-height: 1.2; margin-bottom: 20px;
+    color: #b92525; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(54px, 5.4vw, 72px); line-height: .98;
+    letter-spacing: .4px; margin-bottom: 22px; font-weight: 900;
+    text-shadow: 2px 2px 0 #450b0b;
+}
+
+.texto h1 span {
+    display: block;
+    color: #d6a928;
 }
 
 .texto p {
@@ -86,7 +122,7 @@ nav a:hover {
 }
 
 .bienvenida {
-    background: #111; padding: 60px 8%;
+    background: #151515; padding: 60px 8%;
     text-align: center;
 }
 
@@ -105,7 +141,7 @@ nav a:hover {
 
 .opciones div {
     width: 280px; padding: 25px;
-    background: #1b1b1b; border: 1px solid #b92525;
+    background: #202020; border: 1px solid #b92525;
     border-radius: 10px;
 }
 
@@ -148,15 +184,17 @@ nav a:hover {
 .titulo-nosotros,
 .titulo-promociones,
 .titulo-precios,
-.titulo-reserva {
-    background: #111; padding: 55px 20px;
+.titulo-reserva,
+.titulo-galeria {
+    background: #151515; padding: 55px 20px;
     text-align: center; border-bottom: 2px solid #b92525;
 }
 
 .titulo-nosotros h1,
 .titulo-promociones h1,
 .titulo-precios h1,
-.titulo-reserva h1 {
+.titulo-reserva h1,
+.titulo-galeria h1 {
     color: #d6a928; font-size: 34px;
     margin-bottom: 10px;
 }
@@ -164,7 +202,8 @@ nav a:hover {
 .titulo-nosotros p,
 .titulo-promociones p,
 .titulo-precios p,
-.titulo-reserva p {
+.titulo-reserva p,
+.titulo-galeria p {
     color: #ccc;
 }
 
@@ -203,7 +242,7 @@ nav a:hover {
 }
 
 .mision-vision {
-    background: #111; padding: 60px 8%;
+    background: #151515; padding: 60px 8%;
     text-align: center;
 }
 
@@ -218,7 +257,7 @@ nav a:hover {
 
 .tarjeta-mv {
     width: 400px; padding: 30px;
-    background: #1b1b1b; border: 1px solid #b92525;
+    background: #202020; border: 1px solid #b92525;
     border-radius: 12px; box-shadow: 0 4px 12px #000;
 }
 
@@ -259,7 +298,7 @@ nav a:hover {
 }
 
 .contacto-nosotros {
-    background: #111; padding: 50px 8%;
+    background: #151515; padding: 50px 8%;
     text-align: center;
 }
 
@@ -274,7 +313,7 @@ nav a:hover {
 
 .datos-contacto div {
     width: 250px; padding: 22px;
-    background: #1b1b1b; border: 1px solid #b92525;
+    background: #202020; border: 1px solid #b92525;
     border-radius: 10px;
 }
 
@@ -293,7 +332,7 @@ nav a:hover {
 /* Página Promociones */
 
 .promociones {
-    background: #000; padding: 60px 8%;
+    background: #0b0b0b; padding: 60px 8%;
     text-align: center;
 }
 
@@ -307,7 +346,7 @@ nav a:hover {
 }
 
 .tarjeta-promocion {
-    width: 300px; background: #111;
+    width: 300px; background: #151515;
     border: 2px solid #b92525; border-radius: 10px;
     overflow: hidden;
 }
@@ -317,8 +356,8 @@ nav a:hover {
 }
 
 .tarjeta-promocion img {
-    height: 280px; object-fit: contain;
-    background: #111;
+    width: 100%; height: 240px; object-fit: cover;
+    object-position: center; background: #151515;
 }
 
 .contenido-promocion {
@@ -342,6 +381,11 @@ nav a:hover {
     font-weight: bold; margin: 15px;
 }
 
+.nota-imagenes-promo {
+    color: #aaa; font-size: 13px; line-height: 1.5;
+    margin: 22px auto 0; max-width: 760px;
+}
+
 .mensaje-promociones {
     background: #d6a928; color: #000;
     padding: 50px 20px; text-align: center;
@@ -358,7 +402,7 @@ nav a:hover {
 /* Página Menú */
 
 .seccion-precios {
-    background: #000; padding: 60px 8%;
+    background: #0b0b0b; padding: 60px 8%;
     text-align: center;
 }
 
@@ -372,14 +416,14 @@ nav a:hover {
 }
 
 .tarjeta-precio {
-    width: 300px; background: #111;
+    width: 300px; background: #151515;
     border: 2px solid #b92525; border-radius: 10px;
     overflow: hidden;
 }
 
 .foto-precio {
     position: relative; height: 230px;
-    background: #111;
+    background: #151515;
 }
 
 .foto-precio img {
@@ -423,7 +467,7 @@ nav a:hover {
 }
 
 .informacion-precios {
-    background: #111; padding: 40px 20px;
+    background: #151515; padding: 40px 20px;
     text-align: center;
 }
 
@@ -455,12 +499,12 @@ nav a:hover {
 /* Formulario de pedido */
 
 .reserva {
-    background: #000; padding: 60px 20px;
+    background: #0b0b0b; padding: 60px 20px;
 }
 
 .formulario {
     max-width: 600px; margin: auto;
-    padding: 30px; background: #111;
+    padding: 30px; background: #151515;
     border: 1px solid #b92525; border-radius: 10px;
 }
 
@@ -478,7 +522,7 @@ nav a:hover {
 .formulario select,
 .formulario textarea {
     width: 100%; padding: 11px;
-    background: #222; color: #fff;
+    background: #181818; color: #fff;
     border: 1px solid #555; border-radius: 5px;
     font: inherit;
 }
@@ -497,7 +541,7 @@ nav a:hover {
 
 .total-pedido {
     margin-top: 18px; padding: 15px;
-    background: #191919; border: 1px solid #d6a928;
+    background: #222222; border: 1px solid #d6a928;
     border-radius: 6px;
 }
 
@@ -512,7 +556,7 @@ nav a:hover {
 }
 
 .informacion-reserva {
-    background: #111; padding: 50px 20px;
+    background: #151515; padding: 50px 20px;
     text-align: center;
 }
 
@@ -527,7 +571,7 @@ nav a:hover {
 
 .pasos-reserva div {
     width: 230px; padding: 20px;
-    background: #1b1b1b; border: 1px solid #b92525;
+    background: #202020; border: 1px solid #b92525;
     border-radius: 10px;
 }
 
@@ -544,7 +588,7 @@ nav a:hover {
 /* Redes sociales */
 
 .redes-proximamente {
-    background: #111; padding: 45px 8%;
+    background: #151515; padding: 45px 8%;
     text-align: center; border-top: 2px solid #d6a928;
 }
 
@@ -562,20 +606,10 @@ nav a:hover {
     margin-bottom: 18px;
 }
 
-/* Botón flotante de WhatsApp y pie de página */
-
-.whatsapp {
-    position: fixed; right: 20px;
-    bottom: 20px; width: 58px;
-    height: 58px; display: flex;
-    align-items: center; justify-content: center;
-    background: #25d366; color: #fff;
-    border-radius: 50%; font-size: 28px;
-    text-decoration: none; box-shadow: 0 3px 10px #000;
-}
+/* Pie de página */
 
 footer {
-    background: #090909; padding: 30px;
+    background: #080808; padding: 30px;
     text-align: center; border-top: 2px solid #b92525;
 }
 
@@ -590,14 +624,21 @@ footer p {
 /* Ajustes para celulares */
 
 @media (max-width: 768px) {
+    .franja-papas {
+        height: 90px;
+    }
+
     header {
         flex-direction: column; gap: 15px;
         padding: 18px 5%;
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 29px;
+        letter-spacing: 1px;
     }
+
+    .logo-icon { font-size: 27px; }
 
     nav {
         justify-content: center; flex-wrap: wrap;
@@ -622,7 +663,7 @@ footer p {
     }
 
     .texto h1 {
-        font-size: 32px;
+        font-size: clamp(38px, 10vw, 48px);
     }
 
     .texto p {
@@ -659,7 +700,8 @@ footer p {
     .titulo-nosotros h1,
     .titulo-promociones h1,
     .titulo-precios h1,
-    .titulo-reserva h1 {
+    .titulo-reserva h1,
+    .titulo-galeria h1 {
         font-size: 28px;
     }
 
@@ -674,11 +716,216 @@ footer p {
     .redes-proximamente {
         padding: 38px 6%;
     }
+}
 
-    .whatsapp {
-        right: 15px; bottom: 15px;
-        width: 52px; height: 52px;
-        font-size: 24px;
+
+/* Galería de ambiente y productos */
+.galeria-pollos {
+    background: #0b0b0b;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.galeria-pollos h2 {
+    color: #d6a928;
+    margin-bottom: 12px;
+}
+
+.galeria-intro {
+    color: #ddd;
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto 30px;
+}
+
+.galeria-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #b92525;
+    border-radius: 12px;
+    background: #202020;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.galeria-item:hover {
+    transform: translateY(-3px);
+    border-color: #d6a928;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.galeria-item figcaption {
+    color: #fff;
+    padding: 14px 12px;
+    font-weight: bold;
+}
+
+.contacto-final {
+    background: #151515;
+    padding: 48px 8%;
+    text-align: center;
+    border-top: 2px solid #d6a928;
+}
+
+.contacto-final h2 {
+    color: #d6a928;
+    margin-bottom: 12px;
+}
+
+.contacto-final p {
+    color: #eee;
+    max-width: 780px;
+    line-height: 1.7;
+    margin: 0 auto 18px;
+}
+
+@media (max-width: 900px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
+@media (max-width: 560px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+    .galeria-item img {
+        height: 250px;
+    }
+    .galeria-pollos, .contacto-final {
+        padding: 42px 6%;
+    }
+}
+
+
+/* Detalles para la página independiente de galería */
+.titulo-galeria {
+    background: #151515;
+    padding: 55px 20px;
+    text-align: center;
+    border-bottom: 2px solid #b92525;
+}
+
+.galeria-nota {
+    max-width: 880px;
+    margin: 22px auto 0;
+    color: #d7d7d7;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.boton-galeria-home {
+    margin-top: 18px;
+    border: 1px solid #ffd75a;
+}
+
+@media (max-width: 560px) {
+    .titulo-galeria h1 { font-size: 28px; }
+}
+
+
+/* Opiniones: guardadas en el navegador actual, sin base de datos externa */
+.titulo-opiniones-pagina {
+    background: #141414; padding: 52px 20px; text-align: center;
+    border-bottom: 2px solid #b92525;
+}
+
+.opiniones-etiqueta {
+    display: inline-block; padding: 7px 13px; border-radius: 30px;
+    color: #fff; background: #b92525; font-size: 12px;
+    font-weight: bold; letter-spacing: 1.2px;
+}
+
+.titulo-opiniones-pagina h1 {
+    margin: 14px 0 12px; color: #d6a928;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(34px, 4vw, 48px); letter-spacing: .5px;
+}
+
+.titulo-opiniones-pagina p { color: #ddd; line-height: 1.6; }
+
+.opiniones-main {
+    max-width: 1080px; margin: 0 auto; padding: 45px 6%;
+}
+
+.opiniones-resumen {
+    display: flex; align-items: center; gap: 18px; padding: 22px;
+    margin-bottom: 34px; background: #151515;
+    border: 1px solid #d6a928; border-radius: 12px;
+}
+
+.opiniones-resumen-icono { color: #d6a928; font-size: 42px; line-height: 1; }
+.opiniones-resumen h2 { color: #d6a928; margin-bottom: 7px; }
+.opiniones-resumen p { color: #ddd; line-height: 1.5; }
+.opiniones-subtitulo { color: #d6a928; margin: 0 0 18px; }
+
+.opiniones-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;
+}
+
+.tarjeta-opinion {
+    background: #171717; padding: 18px; border-left: 4px solid #b92525;
+    border-radius: 8px; overflow-wrap: anywhere;
+}
+
+.opinion-superior {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+}
+
+.opinion-estrellas { color: #d6a928; letter-spacing: 2px; }
+.opinion-fecha { color: #aaa; font-size: 12px; }
+.tarjeta-opinion p { color: #eee; line-height: 1.6; margin-bottom: 14px; }
+.opinion-autor { color: #d6a928; font-weight: bold; }
+.sin-opiniones { color: #bbb; padding: 18px 0; line-height: 1.6; }
+
+.formulario-opinion {
+    display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 26px; margin-top: 38px; padding: 28px;
+    background: #141414; border: 1px solid #b92525; border-radius: 12px;
+}
+
+.formulario-opinion-texto h3 { color: #d6a928; font-size: 24px; margin-bottom: 12px; }
+.formulario-opinion-texto p { color: #ddd; line-height: 1.65; }
+#formularioOpinion label { display: block; color: #fff; font-weight: bold; margin: 12px 0 6px; }
+#formularioOpinion input,
+#formularioOpinion select,
+#formularioOpinion textarea {
+    width: 100%; padding: 11px; background: #1b1b1b; color: #fff;
+    border: 1px solid #555; border-radius: 5px; font: inherit;
+}
+
+.boton-opinion {
+    width: 100%; margin-top: 18px; padding: 13px;
+    background: #b92525; color: #fff; border: 0; border-radius: 6px;
+    font-weight: bold; cursor: pointer; transition: background .2s ease;
+}
+
+.boton-opinion:hover { background: #d6a928; color: #000; }
+.opinion-ayuda { color: #d6a928; margin-top: 12px; line-height: 1.5; }
+.nota-almacenamiento { color: #aaa; font-size: 13px; line-height: 1.65; margin-top: 18px; }
+
+@media (max-width: 980px) {
+    header { flex-direction: column; gap: 15px; }
+    nav { justify-content: center; flex-wrap: wrap; gap: 8px; }
+}
+
+@media (max-width: 650px) {
+    .opiniones-grid { grid-template-columns: 1fr; }
+    .formulario-opinion { grid-template-columns: 1fr; padding: 21px; }
+    .opiniones-main { padding: 34px 5%; }
+    .opiniones-resumen { align-items: flex-start; padding: 18px; }
 }

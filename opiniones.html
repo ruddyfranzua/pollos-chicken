@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comparte y consulta opiniones sobre Pollos Chicken en Vinto, Oruro.">
+    <title>Opiniones - Pollos Chicken</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><span class="logo-icon">🍗</span><span class="logo-pollos">POLLOS</span><span class="logo-chicken">CHICKEN</span></div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="precios.html">Menú</a>
+            <a href="galeria.html">Galería de fotos</a>
+            <a href="opiniones.html" aria-current="page">Opiniones</a>
+            <a href="reserva.html">Reserva</a>
+        </nav>
+    </header>
+
+    <section class="titulo-opiniones-pagina">
+        <span class="opiniones-etiqueta">TU EXPERIENCIA CUENTA</span>
+        <h1>OPINIONES DE CLIENTES</h1>
+        <p>Comparte tu experiencia y ayuda a Pollos Chicken a seguir mejorando.</p>
+    </section>
+
+    <main class="opiniones-main">
+        <section class="opiniones-resumen" aria-labelledby="subtitulo-resumen">
+            <div class="opiniones-resumen-icono">★</div>
+            <div>
+                <h2 id="subtitulo-resumen">Valoraciones y comentarios</h2>
+                <p id="resumenValoracion" aria-live="polite">Todavía no hay opiniones publicadas en este navegador.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="titulo-lista-opiniones">
+            <h2 id="titulo-lista-opiniones" class="opiniones-subtitulo">Lo que opinan nuestros clientes</h2>
+            <div id="listaOpiniones" class="opiniones-grid"></div>
+            <p id="sinOpiniones" class="sin-opiniones">Aún no hay comentarios aquí. ¡Puedes compartir la primera opinión!</p>
+        </section>
+
+        <section class="formulario-opinion formulario-opinion-pagina" aria-labelledby="titulo-formulario-opinion">
+            <div class="formulario-opinion-texto">
+                <h3 id="titulo-formulario-opinion">Déjanos tu opinión</h3>
+                <p>Cuéntanos cómo fue tu experiencia en Pollos Chicken. Puedes elegir una valoración de 1 a 5 estrellas.</p>
+            </div>
+            <form id="formularioOpinion">
+                <label for="nombreOpinion">Tu nombre</label>
+                <input type="text" id="nombreOpinion" name="nombreOpinion" maxlength="70" placeholder="Escribe tu nombre" autocomplete="name" required>
+
+                <label for="valoracionOpinion">Tu valoración</label>
+                <select id="valoracionOpinion" name="valoracionOpinion" required>
+                    <option value="">Selecciona las estrellas</option>
+                    <option value="1">★☆☆☆☆ — 1 estrella</option>
+                    <option value="2">★★☆☆☆ — 2 estrellas</option>
+                    <option value="3">★★★☆☆ — 3 estrellas</option>
+                    <option value="4">★★★★☆ — 4 estrellas</option>
+                    <option value="5">★★★★★ — 5 estrellas</option>
+                </select>
+
+                <label for="comentarioOpinion">Tu comentario</label>
+                <textarea id="comentarioOpinion" name="comentarioOpinion" rows="4" maxlength="600" placeholder="Comparte tu experiencia..." required></textarea>
+
+                <button type="submit" class="boton-opinion">PUBLICAR OPINIÓN</button>
+                <p id="estadoOpinion" class="opinion-ayuda" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <p class="nota-almacenamiento">Las opiniones se guardan en el navegador y dispositivo donde se publican. En esta versión de demostración, no se comparten automáticamente con otros visitantes; para eso sería necesaria una base de datos.</p>
+    </main>
+
+    <section class="contacto-final">
+        <h2>¿QUIERES HACER UN PEDIDO O CONSULTAR UNA RESERVA?</h2>
+        <p>Comunícate con Pollos Chicken por WhatsApp. Los pedidos y las reservas se coordinan con el establecimiento; no contamos con servicio de delivery.</p>
+        <a href="https://wa.me/59168900443?text=Hola%20Pollos%20Chicken%2C%20quisiera%20consultar%20un%20pedido%20o%20reserva." class="boton" target="_blank" rel="noopener noreferrer">CONTACTAR POR WHATSAPP</a>
+    </section>
+<footer>
+        <h3>🍗 POLLOS CHICKEN</h3>
+        <p>El sabor que te hace volver.</p>
+        <p>📍 Parada Mini 2</p>
+        <p>📱 +591 68900443</p>
+        <p>© 2026 Pollos Chicken</p>
+    </footer>
+
+    <script>
+        (function () {
+            "use strict";
+            const STORAGE_KEY = "pollosChickenOpinionesV1";
+            const form = document.getElementById("formularioOpinion");
+            const list = document.getElementById("listaOpiniones");
+            const empty = document.getElementById("sinOpiniones");
+            const summary = document.getElementById("resumenValoracion");
+            const status = document.getElementById("estadoOpinion");
+
+            function readReviews() {
+                try {
+                    const stored = window.localStorage.getItem(STORAGE_KEY);
+                    const reviews = stored ? JSON.parse(stored) : [];
+                    return Array.isArray(reviews) ? reviews : [];
+                } catch (error) {
+                    status.textContent = "El navegador no permite leer las opiniones guardadas.";
+                    return [];
+                }
+            }
+
+            function makeElement(tag, className, text) {
+                const element = document.createElement(tag);
+                if (className) element.className = className;
+                if (text !== undefined) element.textContent = text;
+                return element;
+            }
+
+            function renderReviews() {
+                const reviews = readReviews().sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                list.replaceChildren();
+                empty.hidden = reviews.length > 0;
+
+                if (!reviews.length) {
+                    summary.textContent = "Todavía no hay opiniones publicadas en este navegador.";
+                    return;
+                }
+
+                const average = reviews.reduce((sum, review) => sum + Number(review.rating || 0), 0) / reviews.length;
+                summary.textContent = average.toFixed(1) + " de 5 estrellas · " + reviews.length + (reviews.length === 1 ? " opinión guardada en este navegador" : " opiniones guardadas en este navegador");
+
+                reviews.forEach((review) => {
+                    const card = makeElement("article", "tarjeta-opinion");
+                    const top = makeElement("div", "opinion-superior");
+                    const rating = makeElement("span", "opinion-estrellas", "★".repeat(review.rating) + "☆".repeat(5 - review.rating));
+                    rating.setAttribute("aria-label", review.rating + " de 5 estrellas");
+                    top.appendChild(rating);
+                    top.appendChild(makeElement("span", "opinion-fecha", review.date || "Opinión recibida"));
+                    card.appendChild(top);
+                    card.appendChild(makeElement("p", "", "“" + review.comment + "”"));
+                    card.appendChild(makeElement("span", "opinion-autor", review.name));
+                    list.appendChild(card);
+                });
+            }
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+
+                const name = document.getElementById("nombreOpinion").value.trim();
+                const rating = Number(document.getElementById("valoracionOpinion").value);
+                const comment = document.getElementById("comentarioOpinion").value.trim();
+                if (!name || !comment || rating < 1 || rating > 5) return;
+
+                const reviews = readReviews();
+                reviews.push({
+                    name: name.slice(0, 70),
+                    rating: rating,
+                    comment: comment.slice(0, 600),
+                    date: new Date().toLocaleDateString("es-BO"),
+                    createdAt: Date.now()
+                });
+
+                try {
+                    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+                    form.reset();
+                    status.textContent = "¡Gracias! Tu opinión ya aparece en esta página en este navegador.";
+                    renderReviews();
+                    document.getElementById("titulo-lista-opiniones").scrollIntoView({ behavior: "smooth", block: "start" });
+                } catch (error) {
+                    status.textContent = "No se pudo guardar en este navegador. Intenta nuevamente.";
+                }
+            });
+
+            renderReviews();
+        })();
+    </script>
+</body>
+</html>

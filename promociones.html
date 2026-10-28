@@ -3,78 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Promociones y opciones destacadas de Pollos Chicken.">
     <title>Promociones - Pollos Chicken</title>
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
-        <div class="logo">🍗 POLLOS CHICKEN</div>
+        <div class="logo"><span class="logo-icon">🍗</span><span class="logo-pollos">POLLOS</span><span class="logo-chicken">CHICKEN</span></div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
-            <a href="promociones.html">Promociones</a>
+            <a href="promociones.html" aria-current="page">Promociones</a>
             <a href="precios.html">Menú</a>
+            <a href="galeria.html">Galería de fotos</a>
+            <a href="opiniones.html">Opiniones</a>
             <a href="reserva.html">Reserva</a>
         </nav>
     </header>
 
     <section class="titulo-promociones">
         <h1>PROMOCIONES</h1>
-        <p>Aprovecha nuestras ofertas especiales.</p>
+        <p>Antojos para disfrutar el sabor de Pollos Chicken.</p>
     </section>
 
-    <section class="promociones">
-        <h2>OFERTAS ESPECIALES</h2>
-        <div class="contenedor-promociones">
-            <div class="tarjeta-promocion">
-                <img src="./imagenes/estudiante.jpg" alt="Promoción del Día del Estudiante">
-                <div class="contenido-promocion">
-                    <h3>🎓 DÍA DEL ESTUDIANTE</h3>
-                    <h4>Promo Estudiante</h4>
-                    <p>1/4 de pollo con papas fritas y bebida.</p>
-                    <div class="precio">Bs. 17</div>
-                    <a href="reserva.html?promo=Promo%20Estudiante%20-%20Bs.%2017" class="boton">RESERVAR</a>
-                </div>
-            </div>
+    <main>
+        <section class="promociones">
+            <h2>PARA DISFRUTAR HOY</h2>
+            <div class="contenedor-promociones">
+                <article class="tarjeta-promocion">
+                    <img src="imagenes/promo_broaster_casero.jpg" alt="Plato de pollo broaster dorado con papas fritas, imagen referencial" loading="lazy">
+                    <div class="contenido-promocion">
+                        <h3>🍗 ANTOJO BROASTER</h3>
+                        <h4>Promo Estudiante</h4>
+                        <p>Combo individual de pollo broaster con papas fritas y una bebida, ideal para una pausa entre clases.</p>
+                        <div class="precio">Bs. 17</div>
+                        <a href="reserva.html?promo=Promo%20Estudiante%20-%20Bs.%2017" class="boton">RESERVAR</a>
+                    </div>
+                </article>
 
-            <div class="tarjeta-promocion">
-                <img src="./imagenes/broaster.jpg" alt="Combo familiar de Pollos Chicken">
-                <div class="contenido-promocion">
-                    <h3>👨‍👩‍👧‍👦 COMBO FAMILIAR</h3>
-                    <h4>Familia Chicken</h4>
-                    <p>1/2 pollo, papas, ensalada y bebida.</p>
-                    <div class="precio">Bs. 30</div>
-                    <a href="reserva.html?promo=Familia%20Chicken%20-%20Bs.%2030" class="boton">RESERVAR</a>
-                </div>
-            </div>
+                <article class="tarjeta-promocion">
+                    <img src="imagenes/promo_salchipollo_casero.jpg" alt="Plato de salchipollo con papas fritas y salsas, imagen referencial" loading="lazy">
+                    <div class="contenido-promocion">
+                        <h3>🌭 SALCHIPOLLO</h3>
+                        <h4>Dúo para compartir</h4>
+                        <p>Dos porciones de salchipollo con papas y salsas para compartir. El dúo cuesta Bs. 35, un ahorro de Bs. 1 frente a dos porciones individuales.</p>
+                        <div class="precio">Bs. 35</div>
+                        <a href="reserva.html?promo=D%C3%BAo%20Salchipollo%20-%20Bs.%2035" class="boton">RESERVAR</a>
+                    </div>
+                </article>
 
-            <div class="tarjeta-promocion">
-                <img src="./imagenes/combo.jpg" alt="Promoción de fin de semana">
-                <div class="contenido-promocion">
-                    <h3>🔥 FIN DE SEMANA</h3>
-                    <h4>Promo Chicken</h4>
-                    <p>Pollo entero, papas, ensalada y bebida.</p>
-                    <div class="precio">Bs. 45</div>
-                    <a href="reserva.html?promo=Promo%20Chicken%20-%20Bs.%2045" class="boton">RESERVAR</a>
-                </div>
+                <article class="tarjeta-promocion">
+                    <img src="imagenes/promo_medio_pollo_casero.jpg" alt="Plato casero de pollo asado con arroz, papas y ensalada, imagen referencial" loading="lazy">
+                    <div class="contenido-promocion">
+                        <h3>🍽️ MENÚ CASERO</h3>
+                        <h4>Medio Pollo del Día</h4>
+                        <p>Medio pollo acompañado de arroz, papas fritas, ensalada y una bebida.</p>
+                        <div class="precio">Bs. 35</div>
+                        <a href="reserva.html?promo=Men%C3%BA%20Casero%20-%20Bs.%2035" class="boton">RESERVAR</a>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+            <p class="nota-imagenes-promo">Imágenes referenciales. Consulta disponibilidad y confirma las condiciones de cada promoción al hacer tu pedido.</p>
+        </section>
+    </main>
 
     <section class="mensaje-promociones">
-        <h2>¡APROVECHA NUESTRAS PROMOCIONES!</h2>
-        <p>Selecciona una promoción y realiza tu pedido.</p>
+        <h2>¡HAZ TU PEDIDO!</h2>
+        <p>Selecciona una opción y coordina tu pedido directamente con el establecimiento.</p>
         <a href="reserva.html" class="boton">HACER PEDIDO</a>
     </section>
-
-    <a href="https://wa.me/59168322655?text=Hola%20Pollos%20Chicken%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20promociones."
-       class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">💬</a>
 
     <footer>
         <h3>🍗 POLLOS CHICKEN</h3>
         <p>El sabor que te hace volver.</p>
         <p>📍 Parada Mini 2</p>
-        <p>📱 +591 68322655</p>
+        <p>📱 +591 68900443</p>
         <p>© 2026 Pollos Chicken</p>
     </footer>
 </body>

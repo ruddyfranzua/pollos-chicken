@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva - Pollos Chicken</title>
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
-        <div class="logo">🍗 POLLOS CHICKEN</div>
+        <div class="logo"><span class="logo-icon">🍗</span><span class="logo-pollos">POLLOS</span><span class="logo-chicken">CHICKEN</span></div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="promociones.html">Promociones</a>
             <a href="precios.html">Menú</a>
+            <a href="galeria.html">Galería de fotos</a>
+            <a href="opiniones.html">Opiniones</a>
             <a href="reserva.html">Reserva</a>
         </nav>
     </header>
 
     <section class="titulo-reserva">
         <h1>REALIZA TU PEDIDO</h1>
-        <p>Completa el formulario y envía tu pedido por WhatsApp.</p>
+        <p>Completa el formulario y envía tu solicitud por WhatsApp. Los pedidos y reservas se coordinan con el establecimiento; no contamos con servicio de delivery.</p>
     </section>
 
     <section class="reserva">
@@ -36,12 +38,12 @@
                 <label for="pedido">Producto o promoción</label>
                 <select id="pedido" name="pedido" required>
                     <option value="">Seleccione su pedido</option>
-                    <option value="Pollo Broaster - Bs. 20" data-precio="20">Pollo Broaster - Bs. 20</option>
-                    <option value="Salchipapa - Bs. 35" data-precio="35">Salchipapa - Bs. 35</option>
-                    <option value="Pollo Entero - Bs. 45" data-precio="45">Pollo Entero - Bs. 45</option>
+                    <option value="Pollo Broaster - Bs. 15" data-precio="15">Pollo Broaster - Bs. 15</option>
+                    <option value="Salchipollo - Bs. 18" data-precio="18">Salchipollo - Bs. 18</option>
+                    <option value="Menú del Día - Medio Pollo - Bs. 35" data-precio="35">Menú del Día - Medio Pollo - Bs. 35</option>
                     <option value="Promo Estudiante - Bs. 17" data-precio="17">Promo Estudiante - Bs. 17</option>
-                    <option value="Familia Chicken - Bs. 30" data-precio="30">Familia Chicken - Bs. 30</option>
-                    <option value="Promo Chicken - Bs. 45" data-precio="45">Promo Chicken - Bs. 45</option>
+                    <option value="Dúo Salchipollo - Bs. 35" data-precio="35">Dúo Salchipollo - Bs. 35</option>
+                    <option value="Menú Casero - Bs. 35" data-precio="35">Menú Casero - Bs. 35</option>
                 </select>
 
                 <label for="cantidad">Cantidad</label>
@@ -56,7 +58,7 @@
                 <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escriba alguna observación..."></textarea>
 
                 <label for="telefono">Teléfono de contacto</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ej. 68322655" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej. 68900443" required>
 
                 <button type="submit" class="boton-pedido">📱 ENVIAR PEDIDO POR WHATSAPP</button>
             </form>
@@ -71,20 +73,17 @@
             <div><span>3</span><p>Envía tu pedido por WhatsApp.</p></div>
         </div>
     </section>
-
-    <a href="https://wa.me/59168322655" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">💬</a>
-
-    <footer>
+<footer>
         <h3>🍗 POLLOS CHICKEN</h3>
         <p>El sabor que te hace volver.</p>
         <p>📍 Parada Mini 2</p>
-        <p>📱 +591 68322655</p>
+        <p>📱 +591 68900443</p>
         <p>© 2026 Pollos Chicken</p>
     </footer>
 
     <script>
-        // Número de prueba. Se cambiará por el número definitivo.
-        const numeroWhatsApp = "59168322655";
+        // Número definitivo de WhatsApp del establecimiento.
+        const numeroWhatsApp = "59168900443";
         const formulario = document.getElementById("formularioPedido");
         const pedido = document.getElementById("pedido");
         const cantidad = document.getElementById("cantidad");

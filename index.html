@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pollos Chicken</title>
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
-        <div class="logo">🍗 POLLOS CHICKEN</div>
+        <div class="logo"><span class="logo-icon">🍗</span><span class="logo-pollos">POLLOS</span><span class="logo-chicken">CHICKEN</span></div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="promociones.html">Promociones</a>
             <a href="precios.html">Menú</a>
+            <a href="galeria.html">Galería de fotos</a>
+            <a href="opiniones.html">Opiniones</a>
             <a href="reserva.html">Reserva</a>
         </nav>
     </header>
 
+    <section class="franja-papas" aria-label="Imagen decorativa de papas fritas cayendo">
+        <img src="imagenes/papas_cayendo_banner.jpg" alt="Papas fritas doradas cayendo sobre un fondo oscuro">
+    </section>
+
     <section class="inicio">
         <div class="texto">
-            <h1>EL SABOR QUE TE HACE VOLVER</h1>
+            <h1>EL SABOR QUE <span>TE HACE VOLVER</span></h1>
             <p>Disfruta deliciosos pollos al espiedo y broaster, preparados con sabor y dedicación.</p>
             <a href="precios.html" class="boton">VER MENÚ</a>
         </div>
         <div class="foto-principal">
-            <img src="./imagenes/pollo.jpg" alt="Plato de Pollos Chicken">
+            <img src="imagenes/menu2.jpg" alt="Pollo broaster acompañado de papas y arroz">
         </div>
     </section>
 
@@ -57,23 +63,19 @@
     <section class="frase">
         <h2>CALIDAD, SABOR Y BUENA ATENCIÓN</h2>
         <p>Todo lo que necesitas para disfrutar un buen momento.</p>
+        <a href="galeria.html" class="boton boton-galeria-home">VER GALERÍA DE FOTOS</a>
     </section>
 
-    <section class="redes-proximamente">
-        <h2>PRÓXIMAMENTE EN REDES SOCIALES</h2>
-        <p>Estamos preparando este espacio para compartir novedades y promociones de Pollos Chicken.</p>
-        <p class="redes-nota">Por el momento, puedes conocer nuestras promociones o realizar tu pedido desde esta página.</p>
-        <a href="promociones.html" class="boton">VER PROMOCIONES</a>
+    <section class="contacto-final">
+        <h2>¿QUIERES HACER UN PEDIDO O CONSULTAR UNA RESERVA?</h2>
+        <p>Comunícate directamente con Pollos Chicken por WhatsApp. Los pedidos se coordinan con el establecimiento; no contamos con servicio de delivery.</p>
+        <a href="https://wa.me/59168900443?text=Hola%20Pollos%20Chicken%2C%20quisiera%20consultar%20un%20pedido%20o%20reserva." class="boton" target="_blank" rel="noopener noreferrer">CONTACTAR POR WHATSAPP</a>
     </section>
-
-    <a href="https://wa.me/59168322655?text=Hola%20Pollos%20Chicken%2C%20quisiera%20informaci%C3%B3n."
-       class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">💬</a>
-
-    <footer>
+<footer>
         <h3>🍗 POLLOS CHICKEN</h3>
         <p>El sabor que te hace volver.</p>
         <p>📍 Parada Mini 2</p>
-        <p>📱 +591 68322655</p>
+        <p>📱 +591 68900443</p>
         <p>© 2026 Pollos Chicken</p>
     </footer>
 </body>
